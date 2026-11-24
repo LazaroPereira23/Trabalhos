@@ -1,6 +1,7 @@
+<!DOCTYPE HTML>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width, initial-escale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Achadora de zeroneitor 3000</title>
     <link rel="icon" type="image/png" href="https://i.ibb.co/HT80T29P/Pngtree-ufo-spacecraft-science-fiction-technology-5752948.png">
 <!-- Toda a sessão <style> foi feita por IA para poupar tempo, essa foi a única participação da IA
@@ -20,7 +21,7 @@ exceto posteriormente para revisão final do código, toda a sessão <body> foi 
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 30px 20px;
+            padding: 20px;
         }
 
         /* Container principal dividindo a página em 3 colunas */
@@ -28,15 +29,16 @@ exceto posteriormente para revisão final do código, toda a sessão <body> foi 
             display: flex;
             align-items: flex-start;
             justify-content: center;
-            gap: 30px;
+            gap: 24px;
             width: 100%;
-            max-width: 1600px;
+            max-width: 1500px;
         }
 
         /* Coluna da Esquerda: todos os elementos da calculadora */
         .coluna-calculadora {
             flex: 1;
-            max-width: 400px;
+            min-width: 320px;
+            max-width: 380px;
             display: flex;
             flex-direction: column;
             align-items: flex-start;
@@ -45,7 +47,8 @@ exceto posteriormente para revisão final do código, toda a sessão <body> foi 
         /* Coluna do Meio: espaço para o passo a passo da resolução */
         .coluna-passos {
             flex: 1;
-            max-width: 420px;
+            min-width: 320px;
+            max-width: 400px;
             position: relative;
             background: linear-gradient(145deg, #1e1b4b 0%, #0f172a 100%);
             border: 2px dashed #818cf8;
@@ -53,10 +56,11 @@ exceto posteriormente para revisão final do código, toda a sessão <body> foi 
             padding: 26px 18px 18px 18px;
             color: #e2e8f0;
             font-family: 'Consolas', 'Courier New', monospace;
-            font-size: 1.2rem;
+            font-size: 1rem;
             line-height: 1.6;
             min-height: 300px;
             box-shadow: 0 0 20px rgba(129, 140, 248, 0.15), inset 0 0 12px rgba(56, 189, 248, 0.1);
+            word-wrap: break-word;
         }
 
         /* Etiqueta decorativa no topo da coluna de passos */
@@ -79,7 +83,8 @@ exceto posteriormente para revisão final do código, toda a sessão <body> foi 
         /* Coluna da Direita: imagem lateral */
         .coluna-imagem {
             flex: 1;
-            max-width: 7470px;
+            min-width: 300px;
+            max-width: 747px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -88,7 +93,7 @@ exceto posteriormente para revisão final do código, toda a sessão <body> foi 
         .coluna-imagem img {
             width: 100%;
             height: auto;
-            max-height: 660px;
+            max-height: 662px;
             object-fit: contain;
             border-radius: 24px;
             border: 2px solid rgba(129, 140, 248, 0.4);
@@ -100,7 +105,7 @@ exceto posteriormente para revisão final do código, toda a sessão <body> foi 
         }
 
         h1 {
-            font-size: 2.2rem;
+            font-size: 1.9rem;
             font-weight: 800;
             text-align: left;
             background: linear-gradient(90deg, #38bdf8, #818cf8);
@@ -111,7 +116,7 @@ exceto posteriormente para revisão final do código, toda a sessão <body> foi 
         }
 
         h2 {
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             font-weight: 500;
             color: #38bdf8;
             background: rgba(56, 189, 248, 0.1);
@@ -133,7 +138,7 @@ exceto posteriormente para revisão final do código, toda a sessão <body> foi 
             background: #1e293b;
             border: 1px solid #334155;
             border-radius: 16px;
-            padding: 24px;
+            padding: 20px;
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4);
             display: flex;
             flex-direction: column;
@@ -155,12 +160,12 @@ exceto posteriormente para revisão final do código, toda a sessão <body> foi 
 
         input[type="number"] {
             width: 100%;
-            padding: 12px 14px;
+            padding: 10px 12px;
             border-radius: 10px;
             border: 1px solid #475569;
             background-color: #0f172a;
             color: #f8fafc;
-            font-size: 1.05rem;
+            font-size: 1rem;
             font-family: 'Consolas', monospace;
             transition: all 0.2s ease;
         }
@@ -174,13 +179,13 @@ exceto posteriormente para revisão final do código, toda a sessão <body> foi 
         /* Botão Principal */
         button {
             width: 100%;
-            margin-top: 16px;
-            padding: 14px;
+            margin-top: 14px;
+            padding: 12px;
             border: none;
             border-radius: 12px;
             background: linear-gradient(135deg, #0284c7 0%, #4f46e5 100%);
             color: white;
-            font-size: 1.05rem;
+            font-size: 1rem;
             font-weight: 700;
             letter-spacing: 0.5px;
             cursor: pointer;
@@ -197,18 +202,18 @@ exceto posteriormente para revisão final do código, toda a sessão <body> foi 
             transform: translateY(0);
         }
 
-        /* Caixa de Resposta Lúdica (agora posicionada na coluna da esquerda) */
+        /* Caixa de Resposta Lúdica */
         #resposta {
             width: 100%;
             position: relative;
-            margin-top: 24px;
-            padding: 26px 18px 18px 18px;
+            margin-top: 20px;
+            padding: 24px 16px 16px 16px;
             border-radius: 16px;
             background: linear-gradient(145deg, #1e1b4b 0%, #0f172a 100%);
             border: 2px dashed #38bdf8;
             color: #fef08a;
             font-family: 'Consolas', 'Courier New', monospace;
-            font-size: 1.2rem;
+            font-size: 1.05rem;
             font-weight: 600;
             line-height: 1.6;
             word-wrap: break-word;
@@ -249,8 +254,25 @@ exceto posteriormente para revisão final do código, toda a sessão <body> foi 
             }
         }
 
-        /* Responsividade para telas menores */
-        @media (max-width: 1100px) {
+        /* Responsividade refinada para telas/guias menores (Notebooks compactos ou janelas redimensionadas) */
+        @media (max-width: 1280px) {
+            .layout-principal {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .coluna-calculadora, .coluna-passos {
+                max-width: 450px;
+            }
+            .coluna-imagem {
+                max-width: 100%;
+                margin-top: 10px;
+            }
+            .coluna-imagem img {
+                max-height: 400px;
+            }
+        }
+
+        @media (max-width: 850px) {
             .layout-principal {
                 flex-direction: column;
                 align-items: center;
@@ -357,8 +379,7 @@ exceto posteriormente para revisão final do código, toda a sessão <body> foi 
 // Math.abs devolve o valor modular do número
                 complexo = (Math.abs(delta)) ** 0.5;
                 divisor = 2 * a;
-                resposta1.innerText = (`Resultado simples: x = { ${(-b)/(divisor)} + ${(complexo.toFixed(2))/(divisor)}i e ${(-b)/(divisor)} - ${(complexo.toFixed(2))/(divisor)}i }.
-                Ou por extenço, evidenciando a parte real e imaginária: x = { ${-b/divisor} + ${complexo.toFixed(2)/divisor}i e ${-b/divisor} - ${complexo.toFixed(2)/divisor}i }`);
+                resposta1.innerText = (`Resultado simples: x = { ${(-b)/(divisor)} + ${(complexo.toFixed(2))/(divisor)}i e ${(-b)/(divisor)} - ${(complexo.toFixed(2))/(divisor)}i }.`
                 passosDiv.innerText = `Como a ≠ 0, temos uma equação de 2° grau. Agora, temos que olhar para o Δ(delta), dado por Δ = b² - 4ac, substituindo, Δ = (${b})² - 4(${a})(${c}) = ${delta}. 
                 Como Δ < 0, essa equação vai gerar raízes complexas, com parte imaginária, por tanto separamos a raiz em duas raizes, uma real e outra imaginária, formando a parte imaginária do número: 
                 √${delta} = √${Math.abs(delta)} . √-1; √-1 = i (Unidade imaginária). Segundo as propriedades das operações complexas, devemos então simplificar os números reais sem mexer no número imaginário, que é representado por i. 

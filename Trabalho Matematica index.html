@@ -356,8 +356,8 @@ exceto posteriormente para revisão final do código, toda a sessão <body> foi 
                 
             }else{
                 x = -1 * (c/b);
-                resposta1.innerText = (`Resultado: ${x}`);
-                passosDiv.innerText = `Passo a passo: Como a = 0, a equação é do 1° grau. Fórmula aplicada com base nos coeficientes b e c. Assim, aplicamos -(c/b), substituindo, temos -(${b}/${c}) = ${x}`;
+                resposta1.innerText = (`Resultado: ${x.toFixed(2)}`);
+                passosDiv.innerText = `Passo a passo: Como a = 0, a equação é do 1° grau. Fórmula aplicada com base nos coeficientes b e c. Assim, aplicamos -(c/b), substituindo, temos -(${b}/${c}) = ${x.toFixed(2)}`;
             }
         }else{
             if(delta >= 0){
@@ -366,24 +366,24 @@ exceto posteriormente para revisão final do código, toda a sessão <body> foi 
                     x2 = x1;
                     resposta1.innerText = (`Resultado: ${x1.toFixed(2)} e ${x2.toFixed(2)}`);
                     passosDiv.innerText = `Passo a passo: Como a ≠ 0, temos uma equação de 2° grau. Agora, temos que olhar para o Δ(delta), dado por Δ = b² - 4ac, substituindo, Δ = (${b})² - 4(${a})(${c}) = ${delta}. 
-                    Como Δ = 0, zeramos a raiz da fórmula de Bhaskara, (-b ± 0) / (2a), substituindo, -(${b}) / 2 . ${a} => x = {${x1} e ${x2} (tecnicamente duas raizes, mas idênticas)`;
+                    Como Δ = 0, zeramos a raiz da fórmula de Bhaskara, (-b ± 0) / (2a), substituindo, -(${b}) / 2 . ${a} => x = {${x1.toFixed(2)} e ${x2.toFixed(2)} (tecnicamente duas raizes, mas idênticas)`;
                 }else{
                     x1 = (-b + (delta ** 0.5))/(2 * a);
                     x2 = (-b - (delta ** 0.5))/(2 * a);
 //.toFixed(2) devolve o valor com a parte decimal limitada a duas casas, já que a maioria das vezes ela tem dezenas de números após a vírgula
                     resposta1.innerText = (`Resultado: ${x1.toFixed(2)} e ${x2.toFixed(2)}`);
                     passosDiv.innerText = `Passo a passo: Como a ≠ 0, temos uma equação de 2° grau. Agora, temos que olhar para o Δ(delta), dado por Δ = b² - 4ac, substituindo, Δ = (${b})² - 4(${a})(${c}) = ${delta}. 
-                    Como Δ > 0, aplicamos Bhaskara normalmente, (-b ± √Δ) / (2a), substituindo, -((${b}) ± √${delta}) / 2 . ${a} => x = {${x1} e ${x2}`;
+                    Como Δ > 0, aplicamos Bhaskara normalmente, (-b ± √Δ) / (2a), substituindo, -((${b}) ± √${delta.toFixed(2)}) / 2 . ${a} => x = {${x1.toFixed(2)} e ${x2.toFixed(2)}`;
                 }
             }else{
 // Math.abs devolve o valor modular do número
                 complexo = (Math.abs(delta)) ** 0.5;
                 divisor = 2 * a;
                 resposta1.innerText = (`Resultado: x = { ${(-b)/(divisor)} + ${(complexo.toFixed(2))/(divisor)}i e ${(-b)/(divisor)} - ${(complexo.toFixed(2))/(divisor)}i }`);
-                passosDiv.innerText = `Como a ≠ 0, temos uma equação de 2° grau. Agora, temos que olhar para o Δ(delta), dado por Δ = b² - 4ac, substituindo, Δ = (${b})² - 4(${a})(${c}) = ${delta}. 
+                passosDiv.innerText = `Como a ≠ 0, temos uma equação de 2° grau. Agora, temos que olhar para o Δ(delta), dado por Δ = b² - 4ac, substituindo, Δ = (${b})² - 4(${a})(${c}) = ${delta.toFixed(2)}. 
                 Como Δ < 0, essa equação vai gerar raízes complexas, com parte imaginária, por tanto separamos a raiz em duas raizes, uma real e outra imaginária, formando a parte imaginária do número: 
-                √${delta} = √${Math.abs(delta)} . √-1; √-1 = i (Unidade imaginária). Segundo as propriedades das operações complexas, devemos então simplificar os números reais sem mexer no número imaginário, que é representado por i. 
-                -${b} ± √${Math.abs(delta)}i = ${-b} ± √${complexo.toFixed(2)}i. Simplificando o divisor, temos a resposta x = {${(-b)/(divisor)} ± √${(complexo.toFixed(2))/(divisor)}i}`;
+                √${delta.toFixed(2)} = √${Math.abs(delta.toFixed(2))} . √-1; √-1 = i (Unidade imaginária). Segundo as propriedades das operações complexas, devemos então simplificar os números reais sem mexer no número imaginário, que é representado por i. 
+                -${b} ± √${Math.abs(delta.toFixed(2))}i = ${-b} ± √${complexo.toFixed(2)}i. Simplificando o divisor, temos a resposta x = {${(-b)/(divisor)} ± √${(complexo.toFixed(2))/(divisor)}i}`;
             }
         }
     }
